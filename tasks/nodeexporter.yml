@@ -1,0 +1,14 @@
+- name: "Deploy {{common_name}}"
+  docker_container:
+    name: "{{common_name}}"
+    image: "{{ docker_image }}:{{ docker_tag }}"
+    state: started
+    keep_volumes: no
+    pull: yes
+    recreate: yes
+    command:
+    restart_policy: unless-stopped
+    network_mode: "{{docker_network_mode}}"
+    ports: 
+      - "{{docker_default_port}}:9100"
+  register: deploy

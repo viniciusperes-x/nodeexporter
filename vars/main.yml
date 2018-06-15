@@ -1,0 +1,9 @@
+common_name: "nodeexporter"
+
+docker_image: "prom/node-exporter"
+docker_tag: "v0.16.0"
+docker_confs: "/files/nodeexporter/confs"
+docker_logs: "/files/nodeexporter/logs"
+docker_default_port: 9110
+docker_network_mode: "bridge"
+docker_restart_policy: "unless-stopped"

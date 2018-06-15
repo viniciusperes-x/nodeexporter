@@ -1,0 +1,8 @@
+- hosts: all
+  become: yes
+  gather_facts: yes
+  vars_files:
+    - "vars/main.yml"
+  tasks:
+    - name: "Deploy {{common_name}}"
+      import_tasks: tasks/nodeexporter.yml
